@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>店舗登録</title>
+</head>
+<body>
+
+<h2>店舗登録</h2>
+
+<form action="/add" method="post">
+    <div>
+        <label for="name">名前</label>
+        <input type="text" id="name" name="name" required>
+    </div>
+    <div>
+        <label for="addres">住所</label>
+        <input type="text" id="addres" name="addres" required>
+    </div>
+
+    <div>
+        <label for="time">営業時間</label>
+        <input type="text" id="time" name="time" placeholder="例:平日 10:00~18:00 土日祝日 9:00~17:00 ,HP参照　など" required>
+    </div>
+
+    <div>
+        <label for="password">パスワード</label>
+        <input type="password" id="password" name="password" required>
+    </div>
+    <button type="submit">登録</button>
+</form>
+
+<a href="/">← ホームに戻る</a>
+
+</body>
+</html>
