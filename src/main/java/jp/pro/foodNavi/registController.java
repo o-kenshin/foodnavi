@@ -11,6 +11,8 @@ public class registController {
 
     record ShopInfo(String name,String addres, String category, String openhour, String introduce){}
     private List<ShopInfo> shopInfos = new ArrayList<>();
+
+
     @GetMapping("/add")
     public String regist(){
 
