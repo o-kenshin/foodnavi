@@ -1,22 +1,25 @@
 package jp.pro.foodNavi;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@RequiredArgsConstructor
 @Controller
 public class registController {
-
-    record ShopInfo(String name,String addres, String category, String openhour, String introduce){}
-    private List<ShopInfo> shopInfos = new ArrayList<>();
+    private final ShopRepository repository;
 
 
-    @GetMapping("/add")
-    public String regist(){
 
-        return "index";
+    @PostMapping("/add")
+    public String registShop(@ModelAttribute Shop shop){
+        repository.save(shop);
+        return "redirect:/";
     }
 
 }

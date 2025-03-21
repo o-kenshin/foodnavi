@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>検索結果</title>
+</head>
+<body>
+<header>
+    <h1>検索結果</h1>
+    <nav>
+        <ul>
+            <li><a href="/">ホーム</a></li>
+            <li><a href="/search">お店を探す</a></li>
+        </ul>
+    </nav>
+</header>
+
+
+
+<table border="1">
+    <caption>検索Shop 一覧</caption>
+    <thead>
+    <tr>
+        <th>店名</th>
+        <th>住所</th>
+        <th>営業時間</th>
+        <th>紹介文</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="result : ${shopSearchResults}">
+        <td th:text="${result.name}">(shopname)</td>
+        <td th:text="${result.address}">(address)</td>
+        <td th:text="${result.openhour}">営業時間</td>
+        <td th:text="${result.introduce}">紹介文</td>
+    </tr>
+    </tbody>
+</table>
+
+<div th:if="${#lists.isEmpty(shopSearchResults)}">
+    <p>該当する店舗はありません。</p>
+</div>
+
+<footer>
+    <p>&copy; 2025 飲食店検索サイト</p>
+</footer>
+
+</body>
+</html>

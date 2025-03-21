@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleag.org">
+<html xmlns:th="http://www.thymeleaf.org" lang="ja">
 <head>
   <meta charset="UTF-8">
   <title>飲食店検索画面</title>
@@ -18,23 +18,40 @@
 <main>
   <h2>お店検索</h2>
   <form action="/results" method="GET">
-    <label for="keyword">キーワード:</label>
-    <input type="text" id="keyword" name="keyword" placeholder="例: ラーメン, カフェ">
+    <label for="name">店名:</label>
+    <input type="text" id="name" name="name" placeholder="例: スターバックスコーヒー">
 
-    <label for="addres">住所:</label>
-    <input type="text" id="addres" name="addres" placeholder="例:京都市"/>
+    <label for="address">住所:</label>
+    <input type="text" id="address" name="address" placeholder="例:京都市"/>
 
-    <label for="category">カテゴリー:</label>
-    <select id="category" name="category">
-      <option value="sushi">寿司</option>
-      <option value="ramen">ラーメン</option>
-      <option value="cafe">カフェ</option>
-      <option value="izakaya">居酒屋</option>
-    </select>
+    <div>
+      <label for="category">カテゴリー</label>
+      <input type="text" id="category" name="category" placeholder="例: カフェ　など" >
+    </div>
 
     <button type="submit">検索</button>
   </form>
 </main>
+
+<table border="1">
+  <caption>Shop 一覧</caption>
+  <thead>
+  <tr>
+    <th>店名</th>
+    <th>住所</th>
+    <th>営業時間</th>
+    <th>紹介文</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="shop : ${shopInformations}">
+    <td th:text="${shop.name}">(shopname)</td>
+    <td th:text="${shop.address}">(address)</td>
+    <td th:text="${shop.openhour}">営業時間</td>
+    <td th:text="${shop.introduce}">紹介文</td>
+  </tr>
+  </tbody>
+</table>
 
 <footer>
   <p>&copy; 2025 飲食店検索サイト</p>

@@ -10,10 +10,6 @@ public class HomeController {
         return "index";
     }
 
-    @GetMapping("/search")
-    public String showSearchForm() {
-        return "search"; // search.html を表示
-    }
 
     @GetMapping("/register")
     public String registerForm() {
