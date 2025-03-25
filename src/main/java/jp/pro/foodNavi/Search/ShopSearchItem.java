@@ -1,4 +1,4 @@
-package jp.pro.foodNavi;
+package jp.pro.foodNavi.Search;
 
 
 import lombok.Data;

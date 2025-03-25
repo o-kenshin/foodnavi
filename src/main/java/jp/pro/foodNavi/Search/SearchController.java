@@ -1,5 +1,7 @@
-package jp.pro.foodNavi;
+package jp.pro.foodNavi.Search;
 
+import jp.pro.foodNavi.Home.Shop;
+import jp.pro.foodNavi.Home.ShopRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Controller;
