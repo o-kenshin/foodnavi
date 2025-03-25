@@ -1,9 +1,10 @@
-package jp.pro.foodNavi;
+package jp.pro.foodNavi.Search;
 
 import jakarta.persistence.criteria.CriteriaBuilder;
 import jakarta.persistence.criteria.CriteriaQuery;
 import jakarta.persistence.criteria.Predicate;
 import jakarta.persistence.criteria.Root;
+import jp.pro.foodNavi.Home.Shop;
 import org.springframework.data.jpa.domain.Specification;
 
 public class ShopSpecifications {

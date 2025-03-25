@@ -1,4 +1,4 @@
-package jp.pro.foodNavi;
+package jp.pro.foodNavi.Home;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
