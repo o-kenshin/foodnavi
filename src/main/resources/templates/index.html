@@ -4,7 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>飲食店検索サイト</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+        }
+        .login-container {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+        .login-button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .login-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
 <header>
@@ -23,6 +48,12 @@
     <p>登録ボタンからお店を登録できます</p>
     <a href="/register" >登録</a>
 </main>
+
+<div class="login-container">
+    <a href="/login">
+     <button class="login-button">ログイン</button>
+    </a>
+</div>
 
 <footer>
     <p>&copy; 2025 飲食店検索サイト</p>

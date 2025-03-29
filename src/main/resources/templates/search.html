@@ -3,6 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <title>飲食店検索画面</title>
+
+  <style>
+    body {
+        margin: 0;
+        background-color: #f4f4f4;
+        font-family: Arial, sans-serif;
+    }
+    .login-container {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+    .login-button {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 16px;
+        color: white;
+        background-color: #007BFF;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+    .login-button:hover {
+        background-color: #0056b3;
+    }
+  </style>
 </head>
 <body>
 <header>
@@ -56,6 +83,13 @@
 <footer>
   <p>&copy; 2025 飲食店検索サイト</p>
 </footer>
+
+
+<div class="login-container">
+  <a href="/login">
+    <button class="login-button">ログイン</button>
+  </a>
+</div>
 
 </body>
 </html>
