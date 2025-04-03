@@ -15,51 +15,26 @@
     <div class="page-header">
         <h1>ユーザー登録画面</h1>
     </div>
-    <form method="post" th:action="@{/signup}">
-        <table class="table table-bordered table-hover">
-            <!-- ユーザーID -->
-            <tr>
-                <th class="active col-sm-3">ユーザID</th>
-                <td>
-                    <div class="form-group">
-                        <input type="text" class="form-control" />
-                    </div>
-                </td>
-            </tr>
-            <!-- パスワード -->
-            <tr>
-                <th class="active">パスワード</th>
-                <td>
-                    <div class="form-group">
-                        <input type="text" class="form-control" />
-                    </div>
-                </td>
-            </tr>
-            <!-- ユーザー名 -->
-            <tr>
-                <th class="active">ユーザー名</th>
-                <td>
-                    <div class="form-group">
-                        <input type="text" class="form-control" />
-                    </div>
-                </td>
-            </tr>
+    <form action="/adduser" method="post">
+        <div>
+            <label for="userName">名前</label>
+            <input type="text" id="userName" name="userName" required>
+        </div>
+        <div>
+            <label for="age">年齢</label>
+            <input type="text" id="age" name="age" required>
+        </div>
 
-            <!-- 年齢 -->
-            <tr>
-                <th class="active">年齢</th>
-                <td>
-                    <div class="form-group">
-                        <input type="text" class="form-control" />
-                    </div>
-                </td>
-            </tr>
+        <div>
+            <label for="password">パスワード</label>
+            <input type="text" id="password" name="password" >
+        </div>
 
-
-        </table>
 
         <button class="btn btn-primary" type="submit">ユーザー登録</button>
     </form>
 </div>
 </body>
 </html>
+
+

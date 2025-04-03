@@ -1,10 +1,7 @@
 package jp.pro.foodNavi.Login;
 
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
 
 @Data
@@ -18,10 +15,20 @@ public class User {
     @Column(nullable = false)
     public String userName;
 
+    public int age;
+
     @Column(nullable = false)
     public String password;
 
     @Column(nullable = false)
     private String role;
+
+
+    @PrePersist
+    public void DefaultRoleSet(){
+        if(this.role==null){
+            role="USER";
+        }
+    }
 
 }

@@ -9,12 +9,12 @@
 </head>
 <body class="text-center">
 <h1>Login</h1>
-<form method="post" action="/signin">
-    <label>ユーザーID</label>
-    <input type="text" /><br/>
+<form method="post" action="/login">
+    <label for="username">ユーザー名</label>
+    <input type="text" id="username" name="username" required/><br/>
     <br />
-    <label>パスワード</label>
-    <input type="password" /><br/>
+    <label for="password">パスワード</label>
+    <input type="password" id="password" name="password" required/><br/>
     <br />
     <button class="btn btn-primary" type="submit">ログイン</button>
 </form>
