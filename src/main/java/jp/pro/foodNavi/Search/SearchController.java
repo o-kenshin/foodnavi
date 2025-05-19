@@ -8,8 +8,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
+import java.util.Optional;
 
 @RequiredArgsConstructor
 @Controller
@@ -34,4 +36,18 @@ public class SearchController {
 
         return "searchResult";
     }
+
+    @GetMapping("/shop/{id}")
+    public  String showShopDetail(@PathVariable Long id, Model model){
+        Optional<Shop> shop = repository.findById(id);
+        if (shop.isPresent()) {
+            model.addAttribute("shop", shop.get());
+            return "shopDetail";
+        } else {
+            return "redirect:/search"; // 該当なしは検索ページに戻す
+        }
+    }
+
+
+
 }
